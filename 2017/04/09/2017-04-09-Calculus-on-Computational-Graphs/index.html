@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="machine-learning," />
 
 
 
@@ -98,17 +98,28 @@
 
 
 
-<meta name="description" content="Here stores Hanson&apos;s words.">
-<meta name="keywords" content="Hexo, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Infinite">
-<meta property="og:url" content="https://hansonzhao007.github.io/archives/2017/index.html">
+<meta name="description" content="目录{:toc}  IntroductionBackpropagation is the key algorithm that makes training deep models computationally tractable. For modern neural networks, it can make training with gradient descent as much as">
+<meta name="keywords" content="machine-learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算图形学中的微积分-反向传播算法">
+<meta property="og:url" content="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/index.html">
 <meta property="og:site_name" content="Infinite">
-<meta property="og:description" content="Here stores Hanson&apos;s words.">
+<meta property="og:description" content="目录{:toc}  IntroductionBackpropagation is the key algorithm that makes training deep models computationally tractable. For modern neural networks, it can make training with gradient descent as much as">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-def.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval-derivs.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/chain-def-greek.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/chain-forward-greek.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/chain-backward-greek.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval-derivs.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-forwradmode.png">
+<meta property="og:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-backprop.png">
+<meta property="og:updated_time" content="2017-08-23T14:53:15.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Infinite">
-<meta name="twitter:description" content="Here stores Hanson&apos;s words.">
+<meta name="twitter:title" content="计算图形学中的微积分-反向传播算法">
+<meta name="twitter:description" content="目录{:toc}  IntroductionBackpropagation is the key algorithm that makes training deep models computationally tractable. For modern neural networks, it can make training with gradient descent as much as">
+<meta name="twitter:image" content="http://colah.github.io/posts/2015-08-Backprop/img/tree-def.png">
 
 
 
@@ -137,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://hansonzhao007.github.io/archives/2017/"/>
+  <link rel="canonical" href="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/"/>
 
 
 
 
 
-  <title>Archive | Infinite</title>
+  <title>计算图形学中的微积分-反向传播算法 | Infinite</title>
   
 
 
@@ -168,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,407 +317,243 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanson Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.webp">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Infinite">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">计算图形学中的微积分-反向传播算法</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T00:00:00-05:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 10 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/23/LevelDb Introduction/" itemprop="url">
-              
-                <span itemprop="name">LevelDb 详解</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T15:50:17-05:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/23/how-the-append-only-btree-work/" itemprop="url">
-              
-                <span itemprop="name">how-the-append-only-btree-work</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T11:50:17-05:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/20/2017-08-20-inode-command/" itemprop="url">
-              
-                <span itemprop="name">inode相关命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-20T00:00:00-05:00"
-              content="2017-08-20" >
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/16/2017-08-16-talking-storage-chapter2/" itemprop="url">
-              
-                <span itemprop="name">第二章-IO大法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-16T00:00:00-05:00"
-              content="2017-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <ul>
+<li>目录<br>{:toc}</li>
+</ul>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Backpropagation is the key algorithm that makes training deep models computationally tractable. For modern neural networks, it can make training with gradient descent as much as ten million times faster, relative to a naive implementation. That’s the difference between a model taking a week to train and taking 200,000 years.</p>
+<p>Beyond its use in deep learning, backpropagation is a powerful computational tool in many other areas, ranging from weather forecasting to analyzing numerical stability – it just goes by different names. In fact, the algorithm has been reinvented at least dozens of times in different fields (see <a href="http://www.math.uiuc.edu/documenta/vol-ismp/52_griewank-andreas-b.pdf" target="_blank" rel="external">Griewank (2010)</a>). The general, application independent, name is “reverse-mode differentiation.”</p>
+<p>Fundamentally, it’s a technique for calculating derivatives quickly. And it’s an essential trick to have in your bag, not only in deep learning, but in a wide variety of numerical computing situations.</p>
+<h1 id="Computational-Graphs"><a href="#Computational-Graphs" class="headerlink" title="Computational Graphs"></a>Computational Graphs</h1><p>Computational graphs are a nice way to think about mathematical expressions. For example, consider the expression <code>e=(a+b)*(b+1)</code>. There are three operations: two additions and one multiplication. To help us talk about this, let’s introduce two intermediary variables, <code>c</code> and <code>d</code> so that every function’s output has a variable. We now have:</p>
+<p>$$c=a+b$$</p>
+<p>$$d=b+1$$</p>
+<p>$$e=c*d$$</p>
+<p>To create a computational graph, we make each of these operations, along with the input variables, into nodes. When one node’s value is the input to another node, an arrow goes from one to another.<br><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-def.png" alt="pic1"></p>
+<p>These sorts of graphs come up all the time in computer science, especially in talking about functional programs. They are very closely related to the notions of dependency graphs and call graphs. They’re also the core abstraction behind the popular deep learning framework Theano.</p>
+<p>We can evaluate the expression by setting the input variables to certain values and computing nodes up through the graph. For example, let’s set <code>a=2</code> and <code>b=1</code>:<br><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval.png" alt="pic2"></p>
+<p>The expression evaluates to <code>6</code>.</p>
+<h1 id="Derivatives-on-Computational-Graphs"><a href="#Derivatives-on-Computational-Graphs" class="headerlink" title="Derivatives on Computational Graphs"></a>Derivatives on Computational Graphs</h1><p>If one wants to understand derivatives in a computational graph, the key is to understand derivatives on the edges. If <code>a</code> directly affects <code>c</code>, then we want to know how it affects <code>c</code>. If <code>a</code> changes a little bit, how does <code>c</code> change? We call this the partial derivative of <code>c</code> with respect to <code>a</code>.</p>
+<p>To evaluate the partial derivatives in this graph, we need the sum rule and the product rule:</p>
+<p>$$\frac{\partial}{\partial a}(a+b) = \frac{\partial a}{\partial a} + \frac{\partial b}{\partial a} = 1$$</p>
+<p>$$\frac{\partial}{\partial u}uv = u\frac{\partial v}{\partial u} + v\frac{\partial u}{\partial u} = v$$</p>
+<p>Below, the graph has the derivative on each edge labeled.<br><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval-derivs.png" alt="pic3"></p>
+<p>What if we want to understand how nodes that aren’t directly connected affect each other? Let’s consider how <code>e</code> is affected by <code>a</code>. If we change <code>a</code> at a speed of 1, <code>c</code> also changes at a speed of <code>1</code>. In turn, <code>c</code> changing at a speed of <code>1</code> causes <code>e</code> to change at a speed of <code>2</code>. So <code>e</code> changes at a rate of <code>1∗2</code> with respect to <code>a</code>.</p>
+<p>The general rule is to sum over all possible paths from one node to the other, multiplying the derivatives on each edge of the path together. For example, to get the derivative of ee with respect to <code>b</code> we get:</p>
+<p>$$\frac{\partial e}{\partial b}= 1<em>2 + 1</em>3$$</p>
+<p>This accounts for how b affects e through c and also how it affects it through d.</p>
+<p>This general “sum over paths” rule is just a different way of thinking about the multivariate chain rule.</p>
+<h1 id="Factoring-Paths"><a href="#Factoring-Paths" class="headerlink" title="Factoring Paths"></a>Factoring Paths</h1><p>The problem with just “summing over the paths” is that it’s very easy to get a combinatorial explosion in the number of possible paths.</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/chain-def-greek.png" alt="pic4"></p>
+<p>In the above diagram, there are three paths from <code>X</code> to <code>Y</code>, and a further three paths from <code>Y</code> to <code>Z</code>. If we want to get the derivative $\frac{\partial Z}{\partial X}$ by summing over all paths, we need to sum over <code>3∗3=9</code> paths:</p>
+<p>$$\frac{\partial Z}{\partial X} = \alpha\delta + \alpha\epsilon + \alpha\zeta + \beta\delta + \beta\epsilon + \beta\zeta + \gamma\delta + \gamma\epsilon + \gamma\zeta$$</p>
+<p>The above only has nine paths, but it would be easy to have the number of paths to grow exponentially as the graph becomes more complicated.</p>
+<p>Instead of just naively summing over the paths, it would be much better to factor them:</p>
+<p>$$\frac{\partial Z}{\partial X} = (\alpha + \beta + \gamma)(\delta + \epsilon + \zeta)$$</p>
+<p>This is where “forward-mode differentiation” and “reverse-mode differentiation” come in. They’re algorithms for efficiently computing the sum by factoring the paths. Instead of summing over all of the paths explicitly, they compute the same sum more efficiently by merging paths back together at every node. In fact, both algorithms touch each edge exactly once!</p>
+<p>Forward-mode differentiation starts at an input to the graph and moves towards the end. At every node, it sums all the paths feeding in. Each of those paths represents one way in which the input affects that node. By adding them up, we get the total way in which the node is affected by the input, it’s derivative.</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/chain-forward-greek.png" alt="pic5"></p>
+<p>Though you probably didn’t think of it in terms of graphs, forward-mode differentiation is very similar to what you implicitly learned to do if you took an introduction to calculus class.</p>
+<p>Reverse-mode differentiation, on the other hand, starts at an output of the graph and moves towards the beginning. At each node, it merges all paths which originated at that node.</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/chain-backward-greek.png" alt="pic6"></p>
+<p>Forward-mode differentiation tracks how one input affects every node. Reverse-mode differentiation tracks how every node affects one output. That is, forward-mode differentiation applies the operator $\frac{\partial}{\partial X}$ to every node, while reverse mode differentiation applies the operator $\frac{\partial Z}{\partial}$ to every node</p>
+<h1 id="Computational-Victories"><a href="#Computational-Victories" class="headerlink" title="Computational Victories"></a>Computational Victories</h1><p>At this point, you might wonder why anyone would care about reverse-mode differentiation. It looks like a strange way of doing the same thing as the forward-mode. Is there some advantage?</p>
+<p>Let’s consider our original example again:</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-eval-derivs.png" alt="pic7"></p>
+<p>We can use forward-mode differentiation from <code>b</code> up. This gives us the derivative of every node with respect to <code>b</code>.</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-forwradmode.png" alt="pic8"></p>
+<p>We’ve computed $\frac{\partial e}{\partial b}$, the derivative of our output with respect to one of our inputs.</p>
+<p>What if we do reverse-mode differentiation from $e$ down? This gives us the derivative of $e$ with respect to every node:</p>
+<p><img src="http://colah.github.io/posts/2015-08-Backprop/img/tree-backprop.png" alt="pic9"></p>
+<p>When I say that reverse-mode differentiation gives us the derivative of e with respect to every node, I really do mean every node. We get both $\frac{\partial e}{\partial a}$ and $\frac{\partial e}{\partial b}$, the derivatives of $e$ with respect to both inputs. Forward-mode differentiation gave us the derivative of our output with respect to a single input, but reverse-mode differentiation gives us all of them.</p>
+<p>For this graph, that’s only a factor of two speed up, but imagine a function with a million inputs and one output. Forward-mode differentiation would require us to go through the graph a million times to get the derivatives. Reverse-mode differentiation can get them all in one fell swoop! A speed up of a factor of a million is pretty nice!</p>
+<p>When training neural networks, we think of the cost (a value describing how bad a neural network performs) as a function of the parameters (numbers describing how the network behaves). We want to calculate the derivatives of the cost with respect to all the parameters, for use in gradient descent. Now, there’s often millions, or even tens of millions of parameters in a neural network. So, reverse-mode differentiation, called backpropagation in the context of neural networks, gives us a massive speed up!</p>
+<p>(Are there any cases where forward-mode differentiation makes more sense? Yes, there are! Where the reverse-mode gives the derivatives of one output with respect to all inputs, the forward-mode gives us the derivatives of all outputs with respect to one input. If one has a function with lots of outputs, forward-mode differentiation can be much, much, much faster.)</p>
+<h1 id="Isn’t-This-Trivial"><a href="#Isn’t-This-Trivial" class="headerlink" title="Isn’t This Trivial?"></a>Isn’t This Trivial?</h1><p>When I first understood what backpropagation was, my reaction was: “Oh, that’s just the chain rule! How did it take us so long to figure out?” I’m not the only one who’s had that reaction. It’s true that if you ask “is there a smart way to calculate derivatives in feedforward neural networks?” the answer isn’t that difficult.</p>
+<p>But I think it was much more difficult than it might seem. You see, at the time backpropagation was invented, people weren’t very focused on the feedforward neural networks that we study. It also wasn’t obvious that derivatives were the right way to train them. Those are only obvious once you realize you can quickly calculate derivatives. There was a circular dependency.</p>
+<p>Worse, it would be very easy to write off any piece of the circular dependency as impossible on casual thought. Training neural networks with derivatives? Surely you’d just get stuck in local minima. And obviously it would be expensive to compute all those derivatives. It’s only because we know this approach works that we don’t immediately start listing reasons it’s likely not to.</p>
+<p>That’s the benefit of hindsight. Once you’ve framed the question, the hardest work is already done.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Derivatives are cheaper than you think. That’s the main lesson to take away from this post. In fact, they’re unintuitively cheap, and us silly humans have had to repeatedly rediscover this fact. That’s an important thing to understand in deep learning. It’s also a really useful thing to know in other fields, and only more so if it isn’t common knowledge.</p>
+<p>Are there other lessons? I think there are.</p>
+<p>Backpropagation is also a useful lens for understanding how derivatives flow through a model. This can be extremely helpful in reasoning about why some models are difficult to optimize. The classic example of this is the problem of vanishing gradients in recurrent neural networks.</p>
+<p>Finally, I claim there is a broad algorithmic lesson to take away from these techniques. Backpropagation and forward-mode differentiation use a powerful pair of tricks (linearization and dynamic programming) to compute derivatives more efficiently than one might think possible. If you really understand these techniques, you can use them to efficiently calculate several other interesting expressions involving derivatives. We’ll explore this in a later blog post.</p>
+<p>This post gives a very abstract treatment of backpropagation. I strongly recommend reading Michael Nielsen’s chapter on it for an excellent discussion, more concretely focused on neural networks.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://colah.github.io/posts/2015-08-Backprop/" target="_blank" rel="external">Calculus on Computational Graphs: Backpropagation</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/" itemprop="url">
-              
-                <span itemprop="name">计算图形学中的微积分-反向传播算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-09T00:00:00-05:00"
-              content="2017-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/09/2017-04-09-Install-tensorflow-devEnv/" itemprop="url">
-              
-                <span itemprop="name">构建tensorflow开发环境</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-09T00:00:00-05:00"
-              content="2017-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/06/2017-04-06-jekyll-using/" itemprop="url">
-              
-                <span itemprop="name">Jekyll使用总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-06T00:00:00-05:00"
-              content="2017-04-06" >
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/28/2017-03-28-Google-Cpp-Style-Guide-Naming/" itemprop="url">
-              
-                <span itemprop="name">Google Cpp Style Guide - Naming</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-28T00:00:00-05:00"
-              content="2017-03-28" >
-          03-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/26/2017-03-26-markdown-syntax/" itemprop="url">
-              
-                <span itemprop="name">Markdown基本语法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-26T00:00:00-05:00"
-              content="2017-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/25/2017-03-25-how-to-use-requirejs/" itemprop="url">
-              
-                <span itemprop="name">10分钟入门requireJs</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-25T00:00:00-05:00"
-              content="2017-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/machine-learning/" rel="tag"># machine-learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/09/2017-04-09-Install-tensorflow-devEnv/" rel="next" title="构建tensorflow开发环境">
+                <i class="fa fa-chevron-left"></i> 构建tensorflow开发环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/16/2017-08-16-talking-storage-chapter2/" rel="prev" title="第二章-IO大法">
+                第二章-IO大法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -714,6 +561,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -734,8 +592,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/avatar.webp"
@@ -828,6 +695,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Computational-Graphs"><span class="nav-number">2.</span> <span class="nav-text">Computational Graphs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Derivatives-on-Computational-Graphs"><span class="nav-number">3.</span> <span class="nav-text">Derivatives on Computational Graphs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Factoring-Paths"><span class="nav-number">4.</span> <span class="nav-text">Factoring Paths</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Computational-Victories"><span class="nav-number">5.</span> <span class="nav-text">Computational Victories</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Isn’t-This-Trivial"><span class="nav-number">6.</span> <span class="nav-text">Isn’t This Trivial?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -953,11 +836,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
@@ -976,6 +857,18 @@
       <script id="dsq-count-scr" src="https://hansonzhao007.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://hansonzhao007.github.io/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/';
+          this.page.identifier = '2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/';
+          this.page.title = '计算图形学中的微积分-反向传播算法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hansonzhao007.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

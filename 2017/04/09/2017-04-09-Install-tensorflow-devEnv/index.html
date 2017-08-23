@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="machine-learning,tensorflow," />
 
 
 
@@ -98,17 +98,22 @@
 
 
 
-<meta name="description" content="Here stores Hanson&apos;s words.">
-<meta name="keywords" content="Hexo, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Infinite">
-<meta property="og:url" content="https://hansonzhao007.github.io/archives/2017/index.html">
+<meta name="description" content="笔者使用的是windows 10 系统。下面会使用docker来安装 tensorflow。 安装 docker对于window下docker 的安装，直接进入官网 https://www.docker.com/docker-windows 下载安装包。需要注意的是，docker for windows 支持的是 64bit 操作系统。所以 32bit 的系统的环境，暂时这种方式还不支持。 安装">
+<meta name="keywords" content="machine-learning,tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建tensorflow开发环境">
+<meta property="og:url" content="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Install-tensorflow-devEnv/index.html">
 <meta property="og:site_name" content="Infinite">
-<meta property="og:description" content="Here stores Hanson&apos;s words.">
+<meta property="og:description" content="笔者使用的是windows 10 系统。下面会使用docker来安装 tensorflow。 安装 docker对于window下docker 的安装，直接进入官网 https://www.docker.com/docker-windows 下载安装包。需要注意的是，docker for windows 支持的是 64bit 操作系统。所以 32bit 的系统的环境，暂时这种方式还不支持。 安装">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://hansonzhao007.github.io/img/post/201704/ff1427c2-3dbf-4f54-84c4-ac5a3a5f823d.png">
+<meta property="og:image" content="https://hansonzhao007.github.io/img/post/201704/71d000d8-57c3-4678-866e-ff0d56fda55b.png">
+<meta property="og:image" content="https://hansonzhao007.github.io/img/post/201704/bc16f459-722e-426e-8aa3-6429e0a369da.png">
+<meta property="og:updated_time" content="2017-08-23T15:08:15.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Infinite">
-<meta name="twitter:description" content="Here stores Hanson&apos;s words.">
+<meta name="twitter:title" content="构建tensorflow开发环境">
+<meta name="twitter:description" content="笔者使用的是windows 10 系统。下面会使用docker来安装 tensorflow。 安装 docker对于window下docker 的安装，直接进入官网 https://www.docker.com/docker-windows 下载安装包。需要注意的是，docker for windows 支持的是 64bit 操作系统。所以 32bit 的系统的环境，暂时这种方式还不支持。 安装">
+<meta name="twitter:image" content="https://hansonzhao007.github.io/img/post/201704/ff1427c2-3dbf-4f54-84c4-ac5a3a5f823d.png">
 
 
 
@@ -137,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://hansonzhao007.github.io/archives/2017/"/>
+  <link rel="canonical" href="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Install-tensorflow-devEnv/"/>
 
 
 
 
 
-  <title>Archive | Infinite</title>
+  <title>构建tensorflow开发环境 | Infinite</title>
   
 
 
@@ -168,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,407 +311,197 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansonzhao007.github.io/2017/04/09/2017-04-09-Install-tensorflow-devEnv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hanson Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.webp">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Infinite">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">构建tensorflow开发环境</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T00:00:00-05:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 10 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/09/2017-04-09-Install-tensorflow-devEnv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/09/2017-04-09-Install-tensorflow-devEnv/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/23/LevelDb Introduction/" itemprop="url">
-              
-                <span itemprop="name">LevelDb 详解</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T15:50:17-05:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/23/how-the-append-only-btree-work/" itemprop="url">
-              
-                <span itemprop="name">how-the-append-only-btree-work</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T11:50:17-05:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/20/2017-08-20-inode-command/" itemprop="url">
-              
-                <span itemprop="name">inode相关命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-20T00:00:00-05:00"
-              content="2017-08-20" >
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/16/2017-08-16-talking-storage-chapter2/" itemprop="url">
-              
-                <span itemprop="name">第二章-IO大法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-16T00:00:00-05:00"
-              content="2017-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>笔者使用的是windows 10 系统。下面会使用docker来安装 tensorflow。</p>
+<h1 id="安装-docker"><a href="#安装-docker" class="headerlink" title="安装 docker"></a>安装 docker</h1><p>对于window下docker 的安装，直接进入官网 <a href="https://www.docker.com/docker-windows" target="_blank" rel="external">https://www.docker.com/docker-windows</a> 下载安装包。需要注意的是，docker for windows 支持的是 <code>64bit</code> 操作系统。所以 <code>32bit</code> 的系统的环境，暂时这种方式还不支持。</p>
+<h1 id="安装-tensorflow"><a href="#安装-tensorflow" class="headerlink" title="安装 tensorflow"></a>安装 tensorflow</h1><p>使用命令<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -it -p <span class="number">8888</span>:<span class="number">8888</span> gcr.io/tensorflow/tensorflow</div></pre></td></tr></table></figure></p>
+<p>就会自动从 <a href="http://gcr.io" target="_blank" rel="external">http://gcr.io</a> 上，下载 <code>tensorflow</code> 的镜像并运行，等待下载安装结束，直接在浏览器中输入 <code>localhost:8888</code> 进行访问。<br><img src="/img/post/201704/ff1427c2-3dbf-4f54-84c4-ac5a3a5f823d.png" alt="tensorflow"></p>
+<p>就会进入 <a href="https://jupyter.org/" target="_blank" rel="external"><code>Jupyter Notebook</code></a> 应用。Jupter Notebook 是一个开源的 web 应用，是一款交互式的笔记。它可以在线运行输入的代码，并实时显示结果。所以我们可以在 Jupter Notebook 中，编写我们的 tensorflow 代码，同时可以直接看到代码运行结果。</p>
+<h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h1><p>这里我们尝试修改例程 <code>1_hello_tensorflow_ipynb</code> 的代码，并用快捷键 <code>ctrl+Enter</code> 查看代码运行结果。<br><img src="/img/post/201704/71d000d8-57c3-4678-866e-ff0d56fda55b.png" alt="原代码"></p>
+<p>我们这里尝试修改 <code>input2</code> 的向量为 <code>[2, 2, 4]</code> ，并使用快捷键 <code>ctrl+Enter</code> 查看二者相加的结果：<br><img src="/img/post/201704/bc16f459-722e-426e-8aa3-6429e0a369da.png" alt="修改后"></p>
+<p> 可以看到 <code>input1</code> 和 <code>input2</code> 相加的结果已经变成了 <code>[3, 3, 3, 5]</code> 。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://jupyter.org/" target="_blank" rel="external">Jupter Notebook</a></li>
+<li><a href="http://www.tuicool.com/articles/a6JRr2Y" target="_blank" rel="external">Jupyter Notebook 快速入门</a></li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/" itemprop="url">
-              
-                <span itemprop="name">计算图形学中的微积分-反向传播算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-09T00:00:00-05:00"
-              content="2017-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/09/2017-04-09-Install-tensorflow-devEnv/" itemprop="url">
-              
-                <span itemprop="name">构建tensorflow开发环境</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-09T00:00:00-05:00"
-              content="2017-04-09" >
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/06/2017-04-06-jekyll-using/" itemprop="url">
-              
-                <span itemprop="name">Jekyll使用总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-06T00:00:00-05:00"
-              content="2017-04-06" >
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/28/2017-03-28-Google-Cpp-Style-Guide-Naming/" itemprop="url">
-              
-                <span itemprop="name">Google Cpp Style Guide - Naming</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-28T00:00:00-05:00"
-              content="2017-03-28" >
-          03-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/26/2017-03-26-markdown-syntax/" itemprop="url">
-              
-                <span itemprop="name">Markdown基本语法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-26T00:00:00-05:00"
-              content="2017-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/25/2017-03-25-how-to-use-requirejs/" itemprop="url">
-              
-                <span itemprop="name">10分钟入门requireJs</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-25T00:00:00-05:00"
-              content="2017-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/machine-learning/" rel="tag"># machine-learning</a>
+          
+            <a href="/tags/tensorflow/" rel="tag"># tensorflow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/06/2017-04-06-jekyll-using/" rel="next" title="Jekyll使用总结">
+                <i class="fa fa-chevron-left"></i> Jekyll使用总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/09/2017-04-09-Calculus-on-Computational-Graphs/" rel="prev" title="计算图形学中的微积分-反向传播算法">
+                计算图形学中的微积分-反向传播算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -714,6 +509,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -734,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/avatar.webp"
@@ -828,6 +643,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-docker"><span class="nav-number">1.</span> <span class="nav-text">安装 docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-tensorflow"><span class="nav-number">2.</span> <span class="nav-text">安装 tensorflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码编写"><span class="nav-number">3.</span> <span class="nav-text">代码编写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -953,11 +784,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
@@ -976,6 +805,18 @@
       <script id="dsq-count-scr" src="https://hansonzhao007.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://hansonzhao007.github.io/2017/04/09/2017-04-09-Install-tensorflow-devEnv/';
+          this.page.identifier = '2017/04/09/2017-04-09-Install-tensorflow-devEnv/';
+          this.page.title = '构建tensorflow开发环境';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hansonzhao007.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
