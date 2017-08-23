@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="storage," />
+  <meta name="keywords" content="storage,大话存储," />
 
 
 
@@ -98,23 +98,18 @@
 
 
 
-<meta name="description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
-<meta name="keywords" content="storage">
+<meta name="description" content="IO大法PCIPCI是Peripheral Component Interconnect(外设部件互连标准)。其连接在南桥上。北桥连接系统内存，CPU以及高速总线（ex. PCIE）。PCI的地址总线和数据总线是时分复用（Time Division Multiplexing，TDM），即采用同一物理连接的不同时段来传输不同的信号。 数据传输时，分为传输的发起者（Master）和数据的接受者（Sla">
+<meta name="keywords" content="storage,大话存储">
 <meta property="og:type" content="article">
-<meta property="og:title" content="how-the-append-only-btree-work">
-<meta property="og:url" content="http://zhxsh.xyz/how-the-append-only-btree-work.html">
+<meta property="og:title" content="第二章-IO大法">
+<meta property="og:url" content="http://zhxsh.xyz/2017/08/16/talking-storage-chapter2/index.html">
 <meta property="og:site_name" content="Infinite">
-<meta property="og:description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
+<meta property="og:description" content="IO大法PCIPCI是Peripheral Component Interconnect(外设部件互连标准)。其连接在南桥上。北桥连接系统内存，CPU以及高速总线（ex. PCIE）。PCI的地址总线和数据总线是时分复用（Time Division Multiplexing，TDM），即采用同一物理连接的不同时段来传输不同的信号。 数据传输时，分为传输的发起者（Master）和数据的接受者（Sla">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://www.bzero.se/ldapd/how-the-btree-works.png">
-<meta property="og:image" content="http://www.bzero.se/ldapd/sequential-page-view.png">
-<meta property="og:image" content="http://www.bzero.se/ldapd/updated-btree.png">
-<meta property="og:image" content="http://www.bzero.se/ldapd/flattened-btree-page-structure.png">
-<meta property="og:updated_time" content="2017-08-23T17:06:08.143Z">
+<meta property="og:updated_time" content="2017-08-23T15:08:54.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="how-the-append-only-btree-work">
-<meta name="twitter:description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
-<meta name="twitter:image" content="http://www.bzero.se/ldapd/how-the-btree-works.png">
+<meta name="twitter:title" content="第二章-IO大法">
+<meta name="twitter:description" content="IO大法PCIPCI是Peripheral Component Interconnect(外设部件互连标准)。其连接在南桥上。北桥连接系统内存，CPU以及高速总线（ex. PCIE）。PCI的地址总线和数据总线是时分复用（Time Division Multiplexing，TDM），即采用同一物理连接的不同时段来传输不同的信号。 数据传输时，分为传输的发起者（Master）和数据的接受者（Sla">
 
 
 
@@ -143,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://zhxsh.xyz/how-the-append-only-btree-work.html"/>
+  <link rel="canonical" href="http://zhxsh.xyz/2017/08/16/talking-storage-chapter2/"/>
 
 
 
 
 
-  <title>how-the-append-only-btree-work | Infinite</title>
+  <title>第二章-IO大法 | Infinite</title>
   
 
 
@@ -326,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhxsh.xyz/how-the-append-only-btree-work.html">
+    <link itemprop="mainEntityOfPage" href="http://zhxsh.xyz/2017/08/16/talking-storage-chapter2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hanson Zhao">
@@ -343,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">how-the-append-only-btree-work</h1>
+          <h1 class="post-title" itemprop="name headline">第二章-IO大法</h1>
         
 
         <div class="post-meta">
@@ -355,8 +350,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T11:50:17-05:00">
-                2017-08-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T00:00:00-05:00">
+                2017-08-16
               </time>
             
 
@@ -396,9 +391,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/how-the-append-only-btree-work.html#comments" itemprop="discussionUrl">
+                <a href="/2017/08/16/talking-storage-chapter2/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="how-the-append-only-btree-work.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/16/talking-storage-chapter2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -426,27 +421,20 @@
       
 
       
-        <p>原文：<a href="http://www.bzero.se/ldapd/btree.html" target="_blank" rel="external">http://www.bzero.se/ldapd/btree.html</a></p>
-<p>该 tree 也被称为 Copy-On-Write Tree<br>考虑下图的这个3层 b tree.<br><img src="http://www.bzero.se/ldapd/how-the-btree-works.png" alt="3levelbtree"><br>该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。</p>
-<p>这里，leaf chaining（叶节点之间的指针连接）并没有被支持，也就是叶子节点之间的顺序 access 特性不被支持（即没有指针从一个 leaf 指向下一个 leaf），这是因为该特性的实现，会要求每次 update 都去 rewrite 整个 tree。</p>
-<p>该 tree 的 page 在 database 文件中，被顺序存储着。添加 page numbers 也只是意味着增加 file 的 offset（类似于给vector数组后面添加一个位置一样）。</p>
-<p>meta page ？包括：</p>
+        <h1 id="IO大法"><a href="#IO大法" class="headerlink" title="IO大法"></a>IO大法</h1><h2 id="PCI"><a href="#PCI" class="headerlink" title="PCI"></a>PCI</h2><p>PCI是Peripheral Component Interconnect(外设部件互连标准)。其连接在<code>南桥</code>上。<br><code>北桥</code>连接系统内存，CPU以及高速总线（ex. PCIE）。<br>PCI的<code>地址总线</code>和<code>数据总线</code>是<code>时分复用</code>（Time Division Multiplexing，TDM），即采用同一物理连接的不同时段来传输不同的信号。</p>
+<p>数据传输时，分为传输的发起者（Master）和数据的接受者（Slave），同一时刻只有一对设备可以传输数据。</p>
+<h3 id="中断共享"><a href="#中断共享" class="headerlink" title="中断共享"></a>中断共享</h3><p>硬件上，采用<code>电平触发</code>（PCI板卡设备用三极管拉低信号）<br>软件上，采用<code>中断链</code>（如果多个板卡共享一个中断，那么一个中断处理函数结束会指向下一个处理函数，发生中断时候，逐个检查，是则处理，不是则跳过）</p>
+<h2 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h2><p>CPU向存储所在的地址（比如0x0A）发送命令。</p>
 <ul>
-<li>一个指向 root page 的指针</li>
-<li>一个 SHA1 hash</li>
-<li>一个静态计数器（全局计数器）？</li>
+<li>发送读（/写）命令</li>
+<li>指明LBA（硬盘逻辑区块）</li>
+<li>指明读取的内容到哪一段内存。</li>
 </ul>
-<p>当一个 file 被打开，它将会被从尾部的 page 开始扫描，直到找到一个有效的 meta page，从而根据上述的指针，找到 root page。</p>
-<p><img src="http://www.bzero.se/ldapd/sequential-page-view.png" alt="sequential-page-view"></p>
-<p>比如现在要更新 leaf page 8 上的值，不同于直接在该 page 上进行更改覆写，这里会直接产生一个具有 new value 的 page，并 append 到 file 尾部。如下图中的 page 12。</p>
-<p><img src="http://www.bzero.se/ldapd/updated-btree.png" alt="updated-btree"></p>
-<p>因为原本作为 leaf page 8 的位置，修改到了 page 12，它的每个 parent page 都需要更新对应的指针。</p>
-<p>leaf 7 没有被影响。而 branch 6 作为被修改 leaf 的 parent，其指针值被影响了，所以一个新的 page 被创建出来 – branch page 11，同时一个新的 root 也被创建出来 – root 13，更新后的 tree 如上图所示。</p>
-<p>这样，任何拥有 root page 9 的用户，仍然能够跟踪到没有被修改之前的值。这就是 database 自己的一个 snapshot。</p>
-<p>在该 database file 中，新 page 只是不断的被 append 到 file 尾部，已经写入值的 page 并不会被影响。</p>
-<p>修改一次数据后，当每个相关的 page 都被更新完毕，就会产生一个新的 meta page，指向新的 root page，如下图：</p>
-<p><img src="http://www.bzero.se/ldapd/flattened-btree-page-structure.png" alt="flattened-btree-page-structure"></p>
-<p>从结果上看，对一个page的修改（修改 leaf page 8），会导致 4 个新 page 被 append 到 file 尾部。这在一定程度上浪费了磁盘空间，但是这样顺序写操作，能够非常大的提升随即写性能。并且这里并不需要再记录 transaction log，用于数据恢复，该 database file 本身，就是一个 transaction log。</p>
+<ol>
+<li>第一条指令指定了读时配置：完成是否触发中断，是否启用磁盘缓存。。。</li>
+<li>第二条指令进行磁盘的<code>逻辑区块</code>到<code>实际区块</code>查找，转到该扇区，读取数据</li>
+<li>第三条指令，在数据读出以后，会进入 DMA 操作，不需要 CPU 接入，读取结束，CPU从内存读取数据，并进行计算。</li>
+</ol>
 
       
     </div>
@@ -466,6 +454,8 @@
           
             <a href="/tags/storage/" rel="tag"># storage</a>
           
+            <a href="/tags/大话存储/" rel="tag"># 大话存储</a>
+          
         </div>
       
 
@@ -477,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/inode-command.html" rel="next" title="inode相关命令">
-                <i class="fa fa-chevron-left"></i> inode相关命令
+              <a href="/2017/04/09/Calculus-on-Computational-Graphs/" rel="next" title="计算图形学中的微积分-反向传播算法">
+                <i class="fa fa-chevron-left"></i> 计算图形学中的微积分-反向传播算法
               </a>
             
           </div>
@@ -487,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/LevelDb-Introduction.html" rel="prev" title="LevelDb 详解">
-                LevelDb 详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/20/inode-command/" rel="prev" title="inode相关命令">
+                inode相关命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/avatar.webp"
@@ -642,6 +641,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IO大法"><span class="nav-number">1.</span> <span class="nav-text">IO大法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PCI"><span class="nav-number">1.1.</span> <span class="nav-text">PCI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中断共享"><span class="nav-number">1.1.1.</span> <span class="nav-text">中断共享</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据通信"><span class="nav-number">1.2.</span> <span class="nav-text">数据通信</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -791,9 +806,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://zhxsh.xyz/how-the-append-only-btree-work.html';
-          this.page.identifier = 'how-the-append-only-btree-work.html';
-          this.page.title = 'how-the-append-only-btree-work';
+          this.page.url = 'http://zhxsh.xyz/2017/08/16/talking-storage-chapter2/';
+          this.page.identifier = '2017/08/16/talking-storage-chapter2/';
+          this.page.title = '第二章-IO大法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://hansonzhao007.disqus.com/embed.js';

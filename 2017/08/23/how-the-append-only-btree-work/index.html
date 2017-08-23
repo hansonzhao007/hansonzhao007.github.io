@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="查阅,Cpp," />
+  <meta name="keywords" content="storage," />
 
 
 
@@ -98,18 +98,23 @@
 
 
 
-<meta name="description" content="通用命名规则函数命名，变量命名，文件命名要有描述性；少用缩写。 尽可能给有描述性的命名，别心疼空间，毕竟让代码易于新读者理解很重要。不要用只有项目开发者能理解的缩写，也不要通过砍掉几个字母来缩写单词 123int price_count_reader;  // 无缩写int num_errors;  // “num” 本来就很常见int num_dns_connections; // 人人都知道">
-<meta name="keywords" content="查阅,Cpp">
+<meta name="description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
+<meta name="keywords" content="storage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Cpp Style Guide - Naming">
-<meta property="og:url" content="http://zhxsh.xyz/Google-Cpp-Style-Guide-Naming.html">
+<meta property="og:title" content="how-the-append-only-btree-work">
+<meta property="og:url" content="http://zhxsh.xyz/2017/08/23/how-the-append-only-btree-work/index.html">
 <meta property="og:site_name" content="Infinite">
-<meta property="og:description" content="通用命名规则函数命名，变量命名，文件命名要有描述性；少用缩写。 尽可能给有描述性的命名，别心疼空间，毕竟让代码易于新读者理解很重要。不要用只有项目开发者能理解的缩写，也不要通过砍掉几个字母来缩写单词 123int price_count_reader;  // 无缩写int num_errors;  // “num” 本来就很常见int num_dns_connections; // 人人都知道">
+<meta property="og:description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-23T15:09:53.670Z">
+<meta property="og:image" content="http://www.bzero.se/ldapd/how-the-btree-works.png">
+<meta property="og:image" content="http://www.bzero.se/ldapd/sequential-page-view.png">
+<meta property="og:image" content="http://www.bzero.se/ldapd/updated-btree.png">
+<meta property="og:image" content="http://www.bzero.se/ldapd/flattened-btree-page-structure.png">
+<meta property="og:updated_time" content="2017-08-23T17:06:08.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Cpp Style Guide - Naming">
-<meta name="twitter:description" content="通用命名规则函数命名，变量命名，文件命名要有描述性；少用缩写。 尽可能给有描述性的命名，别心疼空间，毕竟让代码易于新读者理解很重要。不要用只有项目开发者能理解的缩写，也不要通过砍掉几个字母来缩写单词 123int price_count_reader;  // 无缩写int num_errors;  // “num” 本来就很常见int num_dns_connections; // 人人都知道">
+<meta name="twitter:title" content="how-the-append-only-btree-work">
+<meta name="twitter:description" content="原文：http://www.bzero.se/ldapd/btree.html 该 tree 也被称为 Copy-On-Write Tree考虑下图的这个3层 b tree.该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。 这里，leaf chaining（叶节点之间的">
+<meta name="twitter:image" content="http://www.bzero.se/ldapd/how-the-btree-works.png">
 
 
 
@@ -138,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://zhxsh.xyz/Google-Cpp-Style-Guide-Naming.html"/>
+  <link rel="canonical" href="http://zhxsh.xyz/2017/08/23/how-the-append-only-btree-work/"/>
 
 
 
 
 
-  <title>Google Cpp Style Guide - Naming | Infinite</title>
+  <title>how-the-append-only-btree-work | Infinite</title>
   
 
 
@@ -321,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhxsh.xyz/Google-Cpp-Style-Guide-Naming.html">
+    <link itemprop="mainEntityOfPage" href="http://zhxsh.xyz/2017/08/23/how-the-append-only-btree-work/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hanson Zhao">
@@ -338,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Google Cpp Style Guide - Naming</h1>
+          <h1 class="post-title" itemprop="name headline">how-the-append-only-btree-work</h1>
         
 
         <div class="post-meta">
@@ -350,8 +355,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-28T00:00:00-05:00">
-                2017-03-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T11:50:17-05:00">
+                2017-08-23
               </time>
             
 
@@ -391,9 +396,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Google-Cpp-Style-Guide-Naming.html#comments" itemprop="discussionUrl">
+                <a href="/2017/08/23/how-the-append-only-btree-work/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Google-Cpp-Style-Guide-Naming.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/23/how-the-append-only-btree-work/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -421,58 +426,27 @@
       
 
       
-        <h1 id="通用命名规则"><a href="#通用命名规则" class="headerlink" title="通用命名规则"></a>通用命名规则</h1><p>函数命名，变量命名，文件命名要有描述性；少用缩写。</p>
-<p>尽可能给有描述性的命名，别心疼空间，毕竟让代码易于新读者理解很重要。不要用只有项目开发者能理解的缩写，也不要通过砍掉几个字母来缩写单词</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> price_count_reader;  <span class="comment">// 无缩写</span></div><div class="line"><span class="keyword">int</span> num_errors;  <span class="comment">// “num” 本来就很常见</span></div><div class="line"><span class="keyword">int</span> num_dns_connections; <span class="comment">// 人人都知道 “DNS” 是啥</span></div></pre></td></tr></table></figure>
-<p><code>不要像下面这样写：</code></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;                     <span class="comment">// 莫名其妙。</span></div><div class="line"><span class="keyword">int</span> nerr;                  <span class="comment">// 怪缩写。</span></div><div class="line"><span class="keyword">int</span> n_comp_conns;          <span class="comment">// 怪缩写。</span></div><div class="line"><span class="keyword">int</span> wgc_connections;       <span class="comment">// 只有贵团队知道是啥意思。</span></div><div class="line"><span class="keyword">int</span> pc_reader;             <span class="comment">// "pc" 有太多可能的解释了。</span></div><div class="line"><span class="keyword">int</span> cstmr_id;              <span class="comment">// 有删减若干字母。</span></div></pre></td></tr></table></figure>
-<h1 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h1><p>文件名要全部小写, 可以包含下划线 (<code>_</code>) 或连字符 (<code>-</code>). 按项目约定来. 如果并没有项目约定，”_” 更好。</p>
-<p>可接受的文件命名:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* my_useful_class.cc</div><div class="line">* my-useful-class.cc</div><div class="line">* myusefulclass.cc</div><div class="line">* muusefulclass_test.cc // ``_unittest`` 和 ``_regtest`` 已弃用。</div></pre></td></tr></table></figure>
-<p>C++ 文件要以 <code>.cc</code> 结尾, 头文件以 <code>.h</code> 结尾. 专门插入文本的文件则以 <code>.inc</code> 结尾，参见 <code>1.1. Self-contained</code> 头文件。</p>
-<p>不要使用已经存在于 <code>/usr/include</code> 下的文件名 (Yang.Y 注: 即编译器搜索系统头文件的路径), 如 <code>db.h</code>.</p>
-<p>通常应尽量让文件名更加明确. <code>http_server_logs.h</code> 就比 <code>logs.h</code> 要好. 定义类时文件名一般成对出现, 如 <code>foo_bar.h</code> 和 <code>foo_bar.cc</code>, 对应于类 <code>FooBar</code>.</p>
-<p>内联函数必须放在 <code>.h</code> 文件中. 如果内联函数比较短, 就直接放在 <code>.h</code> 中.</p>
-<h1 id="类型命名"><a href="#类型命名" class="headerlink" title="类型命名"></a>类型命名</h1><p>类型名称的每个单词首字母均大写, 不包含下划线: <code>MyExcitingClass</code>, <code>MyExcitingEnum</code>.</p>
-<p>所有类型命名 —— 类, 结构体, 类型定义 (<code>typedef</code>), 枚举 —— 均使用相同约定. 例如:</p>
-<h1 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h1><p>变量名一律小写, 单词之间用下划线连接. 类的成员变量以下划线结尾, 但结构体的就不用，如:: <code>a_local_variable</code>, <code>a_struct_data_member</code>, <code>a_class_data_member_</code>.</p>
-<p><strong>普通变量命名:</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> table_name;  <span class="comment">// 可 - 用下划线。</span></div><div class="line"><span class="built_in">string</span> tablename;   <span class="comment">// 可 - 全小写。</span></div></pre></td></tr></table></figure></p>
-<p><code>但是不要这样写：</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> tableName;   <span class="comment">// 差 - 混合大小写。</span></div></pre></td></tr></table></figure></p>
-<p><strong>类数据成员：</strong></p>
-<p>不管是静态的还是非静态的，类数据成员都可以和普通变量一样, 但要接下划线。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TableInfo</span> &#123;</span></div><div class="line">  ...</div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  <span class="built_in">string</span> table_name_;  <span class="comment">// 可 - 尾后加下划线。</span></div><div class="line">  <span class="built_in">string</span> tablename_;   <span class="comment">// 可。</span></div><div class="line">  <span class="keyword">static</span> Pool&lt;TableInfo&gt;* pool_;  <span class="comment">// 可。</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>结构体变量:</strong><br>不管是静态的还是非静态的，结构体数据成员都可以和普通变量一样, 不用像类那样接下划线:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UrlTableProperties</span> &#123;</span></div><div class="line">    <span class="built_in">string</span> name;</div><div class="line">    <span class="keyword">int</span> num_entries;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结构体与类的讨论参考 <code>结构体 vs. 类</code> 一节.</p>
-<p><strong>全局变量:</strong></p>
-<p>对全局变量没有特别要求, 少用就好, 但如果你要用, 可以用 <code>g_</code> 或其它标志作为前缀, 以便更好的区分局部变量.</p>
-<h1 id="常量命名"><a href="#常量命名" class="headerlink" title="常量命名"></a>常量命名</h1><p>在全局或类里的常量名称前加 <code>k</code>: kDaysInAWeek. 且除去开头的 <code>k</code> 之外每个单词开头字母均大写。</p>
-<p>所有编译时常量, 无论是局部的, 全局的还是类中的, 和其他变量稍微区别一下. <code>k</code> 后接大写字母开头的单词:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> kDaysInAWeek = <span class="number">7</span>;</div></pre></td></tr></table></figure>
-<p>这规则适用于编译时的局部作用域常量，不过要按变量规则来命名也可以。</p>
-<h1 id="函数命名"><a href="#函数命名" class="headerlink" title="函数命名"></a>函数命名</h1><p>常规函数使用大小写混合, 取值和设值函数则要求与变量名匹配: <code>MyExcitingFunction()</code>, <code>MyExcitingMethod()</code>, <code>my_exciting_member_variable()</code>, <code>set_my_exciting_member_variable()</code>.</p>
-<p><strong>常规函数:</strong></p>
-<p>函数名的每个单词首字母大写, 没有下划线。</p>
-<p>如果您的某函数出错时就要直接 crash, 那么就在函数名加上 OrDie. 但这函数本身必须集成在产品代码里，且平时也可能会出错。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">AddTableEntry()</div><div class="line">DeleteUrl()</div><div class="line">OpenFileOrDie()</div></pre></td></tr></table></figure>
-<p><strong>取值和设值函数:</strong></p>
-<p>取值（Accessors）和设值（Mutators）函数要与存取的变量名匹配. 这儿摘录一个类, <code>num_entries_</code> 是该类的实例变量:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> &#123;</span></div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        ...</div><div class="line">        <span class="function"><span class="keyword">int</span> <span class="title">num_entries</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> num_entries_; &#125;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">set_num_entries</span><span class="params">(<span class="keyword">int</span> num_entries)</span> </span>&#123; num_entries_ = num_entries; &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        <span class="keyword">int</span> num_entries_;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>其它非常短小的内联函数名也可以用小写字母, 例如. 如果你在循环中调用这样的函数甚至都不用缓存其返回值, 小写命名就可以接受.</p>
-<h1 id="名字空间命名"><a href="#名字空间命名" class="headerlink" title="名字空间命名"></a>名字空间命名</h1><p>名字空间用小写字母命名, 并基于项目名称和目录结构: <code>google_awesome_project</code>.</p>
-<p>关于名字空间的讨论和如何命名, 参考 <code>名字空间</code> 一节.</p>
-<h1 id="枚举命名"><a href="#枚举命名" class="headerlink" title="枚举命名"></a>枚举命名</h1><p>枚举的命名应当和 常量 或 宏 一致: <code>kEnumName</code> 或是 <code>ENUM_NAME</code>.</p>
-<p>单独的枚举值应该优先采用 常量 的命名方式. 但 宏 方式的命名也可以接受. 枚举名 <code>UrlTableErrors</code> (以及 <code>AlternateUrlTableErrors</code>) 是类型, 所以要用大小写混合的方式.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> UrlTableErrors &#123;</div><div class="line">    kOK = <span class="number">0</span>,</div><div class="line">    kErrorOutOfMemory,</div><div class="line">    kErrorMalformedInput,</div><div class="line">&#125;;</div><div class="line"><span class="keyword">enum</span> AlternateUrlTableErrors &#123;</div><div class="line">    OK = <span class="number">0</span>,</div><div class="line">    OUT_OF_MEMORY = <span class="number">1</span>,</div><div class="line">    MALFORMED_INPUT = <span class="number">2</span>,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>2009 年 1 月之前, 我们一直建议采用 宏 的方式命名枚举值. 由于枚举值和宏之间的命名冲突, 直接导致了很多问题. 由此, 这里改为优先选择常量风格的命名方式. 新代码应该尽可能优先使用常量风格. 但是老代码没必要切换到常量风格, 除非宏风格确实会产生编译期问题.</p>
-<h1 id="宏命名"><a href="#宏命名" class="headerlink" title="宏命名"></a>宏命名</h1><p>你并不打算 使用宏, 对吧? 如果你一定要用, 像这样命名: <code>MY_MACRO_THAT_SCARES_SMALL_CHILDREN</code>.</p>
-<p>参考 预处理宏; 通常 不应该 使用宏. 如果不得不用, 其命名像枚举命名一样全部大写, 使用下划线:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#define ROUND(x) ...</div><div class="line">#define PI_ROUNDED 3.0</div></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li>Banner图转自<a href="http://blog.csdn.net/voidccc/article/details/37599203" target="_blank" rel="external">一张图总结Google C++编程规范</a></li>
-<li>转载自<a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/naming/" target="_blank" rel="external">Google开源风格项目指南</a></li>
-<li>英文原文:<a href="https://google.github.io/styleguide/cppguide.html#Naming" target="_blank" rel="external">Google C++ Style Guide</a></li>
+        <p>原文：<a href="http://www.bzero.se/ldapd/btree.html" target="_blank" rel="external">http://www.bzero.se/ldapd/btree.html</a></p>
+<p>该 tree 也被称为 Copy-On-Write Tree<br>考虑下图的这个3层 b tree.<br><img src="http://www.bzero.se/ldapd/how-the-btree-works.png" alt="3levelbtree"><br>该树由两层的 branch page（root 也是一个 branch page）和 5 个 leaf page 组成。key 和 data 都存储在 leaf page 里面。</p>
+<p>这里，leaf chaining（叶节点之间的指针连接）并没有被支持，也就是叶子节点之间的顺序 access 特性不被支持（即没有指针从一个 leaf 指向下一个 leaf），这是因为该特性的实现，会要求每次 update 都去 rewrite 整个 tree。</p>
+<p>该 tree 的 page 在 database 文件中，被顺序存储着。添加 page numbers 也只是意味着增加 file 的 offset（类似于给vector数组后面添加一个位置一样）。</p>
+<p>meta page ？包括：</p>
+<ul>
+<li>一个指向 root page 的指针</li>
+<li>一个 SHA1 hash</li>
+<li>一个静态计数器（全局计数器）？</li>
 </ul>
+<p>当一个 file 被打开，它将会被从尾部的 page 开始扫描，直到找到一个有效的 meta page，从而根据上述的指针，找到 root page。</p>
+<p><img src="http://www.bzero.se/ldapd/sequential-page-view.png" alt="sequential-page-view"></p>
+<p>比如现在要更新 leaf page 8 上的值，不同于直接在该 page 上进行更改覆写，这里会直接产生一个具有 new value 的 page，并 append 到 file 尾部。如下图中的 page 12。</p>
+<p><img src="http://www.bzero.se/ldapd/updated-btree.png" alt="updated-btree"></p>
+<p>因为原本作为 leaf page 8 的位置，修改到了 page 12，它的每个 parent page 都需要更新对应的指针。</p>
+<p>leaf 7 没有被影响。而 branch 6 作为被修改 leaf 的 parent，其指针值被影响了，所以一个新的 page 被创建出来 – branch page 11，同时一个新的 root 也被创建出来 – root 13，更新后的 tree 如上图所示。</p>
+<p>这样，任何拥有 root page 9 的用户，仍然能够跟踪到没有被修改之前的值。这就是 database 自己的一个 snapshot。</p>
+<p>在该 database file 中，新 page 只是不断的被 append 到 file 尾部，已经写入值的 page 并不会被影响。</p>
+<p>修改一次数据后，当每个相关的 page 都被更新完毕，就会产生一个新的 meta page，指向新的 root page，如下图：</p>
+<p><img src="http://www.bzero.se/ldapd/flattened-btree-page-structure.png" alt="flattened-btree-page-structure"></p>
+<p>从结果上看，对一个page的修改（修改 leaf page 8），会导致 4 个新 page 被 append 到 file 尾部。这在一定程度上浪费了磁盘空间，但是这样顺序写操作，能够非常大的提升随即写性能。并且这里并不需要再记录 transaction log，用于数据恢复，该 database file 本身，就是一个 transaction log。</p>
 
       
     </div>
@@ -490,9 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/查阅/" rel="tag"># 查阅</a>
-          
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
+            <a href="/tags/storage/" rel="tag"># storage</a>
           
         </div>
       
@@ -505,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/markdown-syntax.html" rel="next" title="Markdown基本语法">
-                <i class="fa fa-chevron-left"></i> Markdown基本语法
+              <a href="/2017/08/20/inode-command/" rel="next" title="inode相关命令">
+                <i class="fa fa-chevron-left"></i> inode相关命令
               </a>
             
           </div>
@@ -515,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/jekyll-using.html" rel="prev" title="Jekyll使用总结">
-                Jekyll使用总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/LevelDb-Introduction/" rel="prev" title="LevelDb 详解">
+                LevelDb 详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,17 +548,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/avatar.webp"
@@ -679,22 +642,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通用命名规则"><span class="nav-number">1.</span> <span class="nav-text">通用命名规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件命名"><span class="nav-number">2.</span> <span class="nav-text">文件命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型命名"><span class="nav-number">3.</span> <span class="nav-text">类型命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量命名"><span class="nav-number">4.</span> <span class="nav-text">变量命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常量命名"><span class="nav-number">5.</span> <span class="nav-text">常量命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数命名"><span class="nav-number">6.</span> <span class="nav-text">函数命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#名字空间命名"><span class="nav-number">7.</span> <span class="nav-text">名字空间命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举命名"><span class="nav-number">8.</span> <span class="nav-text">枚举命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#宏命名"><span class="nav-number">9.</span> <span class="nav-text">宏命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -844,9 +791,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://zhxsh.xyz/Google-Cpp-Style-Guide-Naming.html';
-          this.page.identifier = 'Google-Cpp-Style-Guide-Naming.html';
-          this.page.title = 'Google Cpp Style Guide - Naming';
+          this.page.url = 'http://zhxsh.xyz/2017/08/23/how-the-append-only-btree-work/';
+          this.page.identifier = '2017/08/23/how-the-append-only-btree-work/';
+          this.page.title = 'how-the-append-only-btree-work';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://hansonzhao007.disqus.com/embed.js';
