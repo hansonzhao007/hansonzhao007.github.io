@@ -122,7 +122,7 @@
 <meta property="og:image" content="https://hansonzhao007.github.io/img/post/201708/LevelDb14.png">
 <meta property="og:image" content="https://hansonzhao007.github.io/img/post/201708/LevelDb15.png">
 <meta property="og:image" content="https://hansonzhao007.github.io/img/post/201708/LevelDb16.png">
-<meta property="og:updated_time" content="2017-08-23T21:03:19.186Z">
+<meta property="og:updated_time" content="2017-08-24T14:13:01.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LevelDb 详解">
 <meta name="twitter:description" content="说起LevelDb也许您不清楚，但是如果作为IT工程师，不知道下面两位大神级别的工程师，那您的领导估计会Hold不住了：Jeff Dean和Sanjay Ghemawat。这两位是Google公司重量级的工程师，为数甚少的Google Fellow之二。 Jeff Dean其人：http://research.google.com/people/jeff/index.html，Google大规模分">
@@ -531,9 +531,9 @@
 <p>从之前介绍的LevelDb的写操作和这里介绍的读操作可以看出，相对写操作，读操作处理起来要复杂很多，所以写的速度必然要远远高于读数据的速度，也就是说，LevelDb比较适合写操作多于读操作的应用场合。而如果应用是很多读操作类型的，那么顺序读取效率会比较高，因为这样大部分内容都会在缓存中找到，尽可能避免大量的随机读取操作。</p>
 <h1 id="Compaction操作"><a href="#Compaction操作" class="headerlink" title="Compaction操作"></a>Compaction操作</h1><p>前文有述，对于LevelDb来说，写入记录操作很简单，删除记录仅仅写入一个删除标记就算完事，但是读取记录比较复杂，需要在内存以及各个层级文件中依照新鲜程度依次查找，代价很高。为了加快读取速度，levelDb采取了compaction的方式来对已有的记录进行整理压缩，通过这种方式，来删除掉一些不再有效的KV数据，减小数据规模，减少文件数量等。</p>
 <p>levelDb的compaction机制和过程与Bigtable所讲述的是基本一致的，Bigtable中讲到三种类型的compaction: minor ，major和full。所谓minor Compaction，就是把memtable中的数据导出到SSTable文件中；major compaction就是合并不同层级的SSTable文件，而full compaction就是将所有SSTable进行合并。</p>
-<p>LevelDb包含其中两种，minor和major。</p>
+<p>LevelDb包含其中两种，<code>minor</code>和<code>major</code>。</p>
 <p>我们将为大家详细叙述其机理。</p>
-<p>先来看看minor Compaction的过程。Minor compaction 的目的是当内存中的memtable大小到了一定值时，将内容保存到磁盘文件中，图8.1是其机理示意图。 </p>
+<p>先来看看<code>minor Compaction</code>的过程。Minor compaction 的目的是当内存中的memtable大小到了一定值时，将内容保存到磁盘文件中，图8.1是其机理示意图。</p>
 <p><img src="/img/post/201708/LevelDb13.png" alt="LevelDb13"><br>图8.1 minor compaction</p>
 <p>从8.1可以看出，当memtable数量到了一定程度会转换为immutable memtable，此时不能往其中写入记录，只能从中读取KV内容。之前介绍过，immutable memtable其实是一个多层级队列SkipList，其中的记录是根据key有序排列的。所以这个minor compaction实现起来也很简单，就是按照immutable memtable中记录由小到大遍历，并依次写入一个level 0 的新建SSTable文件中，写完后建立文件的index 数据，这样就完成了一次minor compaction。从图中也可以看出，对于被删除的记录，在minor compaction过程中并不真正删除这个记录，原因也很简单，这里只知道要删掉key记录，但是这个KV数据在哪里?那需要复杂的查找，所以在minor compaction的时候并不做删除，只是将这个key作为一个记录写入文件中，至于真正的删除操作，在以后更高层级的compaction中会去做。</p>
 <p>当某个level下的SSTable文件数目超过一定设置值后，levelDb会从这个level的SSTable中选择一个文件（level&gt;0），将其和高一层级的level+1的SSTable文件合并，这就是major compaction。</p>
@@ -1290,6 +1290,8 @@
   
 
   
+  
+
 
   
 
