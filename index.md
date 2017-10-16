@@ -1,3 +1,3 @@
-[Blog](/blog)
-[Linux](/linux)
-[How to edit makefile](/makefile)
+- [Blog](/blog)
+- [Linux](/linux)
+- [How to edit makefile](/makefile)
