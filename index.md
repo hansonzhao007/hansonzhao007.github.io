@@ -1,3 +1,3 @@
 - [Blog](/blog)
 - [Linux](/linux)
-- [How to edit makefile](/makefile)
+- [How to edit makefile](/makefile) or [makefile quick start](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using)
