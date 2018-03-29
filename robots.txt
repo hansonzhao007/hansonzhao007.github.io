@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Allow: /blog
+Allow: /blog/
 
 #Disallow: /vendors/
 #Disallow: /js/
